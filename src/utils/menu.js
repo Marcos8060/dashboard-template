@@ -1,11 +1,7 @@
-// components/defaultNavItems.tsx
-import React from "react";
-import { BiSolidDashboard } from 'react-icons/bi'
-import { HiUsers } from 'react-icons/hi'
-import { RiMessage2Fill } from 'react-icons/ri'
-import { BsCalendarEvent } from 'react-icons/bs'
-import { MdLocalPharmacy } from 'react-icons/md'
-
+import { BiSolidDashboard } from "react-icons/bi";
+import { HiUsers } from "react-icons/hi";
+import { BsCalendarEvent } from "react-icons/bs";
+import { MdLocalPharmacy } from "react-icons/md";
 
 export const menus = [
   {
@@ -15,19 +11,21 @@ export const menus = [
   },
   {
     label: "Users",
-    href: "/dashboard/laboratory",
+    href: "/dashboard/users",
     icon: <HiUsers className="text-xl" />,
-  },
-  {
-    label: "Patients",
-    href: "/dashboard/patients",
-    icon: <HiUsers className="text-xl" />,
-    permission: 'ACCESS_CLIENTS'
-  },
-  {
-    label: "Messages",
-    href: "/dashboard/messages",
-    icon: <RiMessage2Fill className="text-xl" />,
+    children: [
+      {
+        label: "All Users",
+        href: "/dashboard/users/all-users",
+        icon: <HiUsers className="text-xl" />,
+        permission: "ACCESS_EMPLOYEES",
+      },
+      {
+        label: "Approved Users",
+        href: "/dashboard/users/approved-users",
+        icon: <HiUsers className="text-xl" />,
+      },
+    ],
   },
   {
     label: "Schedule",
@@ -41,27 +39,25 @@ export const menus = [
   },
 ];
 
-
-
 export const dashboardData = [
   {
-    label: 'Projects',
+    label: "Projects",
     number: 12,
-    // icon: <HomeIcon className="w-6 h-8" />
+    // icon: <HomeIcon className="w-6 h-8" />,
   },
   {
-    label: 'Clients',
+    label: "Clients",
     number: 44,
-    // icon: <HomeIcon className="w-6 h-8" />
+    // icon: <HomeIcon className="w-6 h-8" />,
   },
   {
-    label: 'Tasks',
+    label: "Tasks",
     number: 37,
-    // icon: <HomeIcon className="w-6 h-8" />
+    // icon: <HomeIcon className="w-6 h-8" />,
   },
   {
-    label: 'Employees',
+    label: "Employees",
     number: 218,
-    // icon: <HomeIcon className="w-6 h-8" />
-  }
-]
+    // icon: <HomeIcon className="w-6 h-8" />,
+  },
+];
