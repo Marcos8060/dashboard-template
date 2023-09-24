@@ -1,10 +1,16 @@
 import React from 'react'
+import { menus } from '@/utils/menu'
 
 const Sidebar = () => {
   return (
-    <section className=''>
+    <div className=''>
       <header className='h-[10vh] shadow flex items-center justify-center text-xl font-bold'>Logo</header>
-    </section>
+      <section>
+        <div>
+
+        </div>
+      </section>
+    </div>
   )
 }
 
