@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
   return (
     <div className="flex h-screen overflow-hidden">
       <div
-        className={`${collapsed ? "w-16" : "w-72"} h-screen md:block hidden`}
+        className={`${collapsed ? "w-16" : "w-64"} h-screen md:block hidden`}
       >
         <Sidebar
           collapsed={collapsed}

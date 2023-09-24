@@ -35,7 +35,7 @@ export const menus = [
   {
     label: "Phamarcy",
     href: "/dashboard/pharmacy",
-    icon: <MdLocalPharmacy className="text-2xl" />,
+    icon: <MdLocalPharmacy className="text-xl" />,
   },
 ];
 

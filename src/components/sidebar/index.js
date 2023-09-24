@@ -5,16 +5,14 @@ import { BsChevronDoubleLeft, BsChevronDoubleRight } from "react-icons/bs";
 import { MenuChild } from "./menu-children";
 
 const Sidebar = ({ collapsed, setCollapsed }) => {
-  const router = useRouter();
-  const currentPath = router.pathname;
 
   return (
     <div className="">
-      <header className="h-[10vh] shadow px-2 flex items-center justify-between text-xl font-bold">
-        {!collapsed && <>Logo</>}
+      <header className="h-[10vh] shadow flex items-center justify-between font-bold">
+        {!collapsed && <div className="px-8">Logo</div>}
         <button
           onClick={() => setCollapsed(!collapsed)}
-          className="pl-2 hover:bg-yellow hover:text-black p-1 rounded-full w-10 h-10 flex place-items-center justify-center"
+          className={`${collapsed ? 'mx-auto' : 'mr-2'} hover:bg-primary hover:text-white p-2 rounded flex place-items-center justify-center`}
         >
           {collapsed ? (
             <BsChevronDoubleRight className="text-xl" />
