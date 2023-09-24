@@ -10,13 +10,13 @@ import { MdLocalPharmacy } from 'react-icons/md'
 export const menus = [
   {
     label: "Dashboard",
-    href: "/",
+    href: "/dashboard",
     icon: <BiSolidDashboard className="text-xl" />,
   },
   {
-    label: "Laboratory",
+    label: "Users",
     href: "/dashboard/laboratory",
-    icon: <UserIcon className="w-6 h-6" />,
+    icon: <HiUsers className="text-xl" />,
   },
   {
     label: "Patients",
