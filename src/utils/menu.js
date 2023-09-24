@@ -17,13 +17,13 @@ export const menus = [
       {
         label: "All Users",
         href: "/dashboard/users/all-users",
-        icon: <HiUsers className="text-xl" />,
+        icon: <HiUsers className="" />,
         permission: "ACCESS_EMPLOYEES",
       },
       {
         label: "Approved Users",
         href: "/dashboard/users/approved-users",
-        icon: <HiUsers className="text-xl" />,
+        icon: <HiUsers className="" />,
       },
     ],
   },
