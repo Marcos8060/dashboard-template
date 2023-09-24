@@ -48,7 +48,7 @@ export const MenuChild = ({ menu, index, collapsed }) => {
                   className={`${currentPath === child.href ? 'bg-primary text-white p-2 rounded flex my-2 items-center gap-2' : 'flex my-2 items-center gap-2 hover:bg-background hover:text-primary rounded p-2'} `}
                   href={child.href}
                 >
-                  {/* <span className="w-6">{child.icon}</span>{" "} */}
+                  <span className="w-6">{child.icon}</span>{" "}
                   <span>{!collapsed && child.label}</span>
                 </Link>
               </li>
