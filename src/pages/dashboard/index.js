@@ -1,9 +1,17 @@
 import React from 'react'
+import Layout from '@/components/layout'
 
-const index = () => {
+const Dashboard = () => {
   return (
-    <div>index</div>
+    <section className='h-[84vh]'>
+      <h1 className='text-xl font-semibold'>Dashboard</h1>
+    </section>
   )
 }
 
-export default index
+
+Dashboard.getLayout = (page) =>(
+  <Layout>{page}</Layout>
+)
+
+export default Dashboard

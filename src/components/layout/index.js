@@ -1,5 +1,5 @@
 import React, { useState, ReactNode } from "react";
-import Header from "./Header";
+import Header from "../header";
 import Sidebar from "../sidebar";
 
 
@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
 
       <div className="flex-1 overflow-y-auto">
         <Header collapsed={collapsed} />
-        <div className="bg-[#DFEAF0]">{children}</div>
+        <div className="bg-background p-4">{children}</div>
       </div>
     </div>
   );
