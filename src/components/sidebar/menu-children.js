@@ -58,7 +58,7 @@ export const MenuChild = ({ menu, index, collapsed }) => {
           </>
         )}
         {showChild && (
-          <ul>
+          <ul className={`${showChild ? 'bg-background rounded' : ''}`}>
             {menu?.children?.map((child, index) => (
               <li key={index} className="px-8 text-sm">
                 <Link
