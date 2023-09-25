@@ -26,6 +26,26 @@ export const MenuChild = ({ menu, index, collapsed }) => {
     }
   }, [collapsed]);
 
+  // Conditionally set the menu item content based on the 'collapsed' state
+  const menuItemContent = collapsed ? (
+    <div className={`${currentPath === menu.href ? 'bg-primary rounded text-white' : ''} text-sm items-center gap-2 rounded p-2 cursor-pointer`}>
+      <span className="w-6">{menu.icon}</span>
+      {showChild && <span>{menu.label}</span>}
+    </div>
+  ) : (
+    <Link
+      className={`${
+        currentPath === menu.href
+          ? "bg-primary text-white p-2 rounded flex my-2 items-center gap-2"
+          : "flex my-2 items-center gap-2 hover:bg-background hover:text-primary rounded p-2"
+      } `}
+      href={menu.href}
+    >
+      <span className="w-6">{menu.icon}</span>
+      <span>{menu.label}</span>
+    </Link>
+  );
+
   return (
     <>
       <li key={index} className="">
@@ -36,42 +56,40 @@ export const MenuChild = ({ menu, index, collapsed }) => {
               className="flex text-sm items-center justify-between hover:bg-background hover:text-primary rounded p-2 cursor-pointer"
             >
               <div className="flex items-center gap-2">
-                <span className="w-6">{menu.icon}</span>{" "}
-                <span>{!collapsed && menu.label}</span>
+                <span className="w-6">{menu.icon}</span>
+                {showChild && <span>{menu.label}</span>}
               </div>
               <div>
-                <span className="cursor-pointer text-primary">{!collapsed && icon}</span>
+                <span className="cursor-pointer text-primary">{icon}</span>
               </div>
             </span>
           </>
         ) : (
-          <>
-            <Link
-              className={`${
-                currentPath === menu.href ? "text-white bg-primary p-2 rounded" : "hover:bg-background p-2 rounded"
-              } flex text-sm items-center gap-2 `}
-              href={menu.href}
-            >
-              <span className="w-6">{menu.icon}</span>{" "}
-              <span>{!collapsed && menu.label}</span>
-            </Link>
-          </>
+          <>{menuItemContent}</>
         )}
         {showChild && (
-          <ul className={`${showChild ? 'bg-background rounded' : ''}`}>
+          <ul className={`${showChild ? "bg-background rounded py-1" : ""}`}>
             {menu?.children?.map((child, index) => (
               <li key={index} className="px-8 text-sm">
-                <Link
-                  className={`${
-                    currentPath === child.href
-                      ? "bg-primary text-white p-2 rounded flex my-2 items-center gap-2"
-                      : "flex my-2 items-center gap-2 hover:bg-background hover:text-primary rounded p-2"
-                  } `}
-                  href={child.href}
-                >
-                  <span className="w-6">{child.icon}</span>{" "}
-                  <span>{!collapsed && child.label}</span>
-                </Link>
+                {/* Conditional rendering of child menu items */}
+                {!collapsed ? (
+                  <Link
+                    className={`${
+                      currentPath === child.href
+                        ? "bg-primary text-white p-2 rounded flex my-2 items-center gap-2"
+                        : "flex my-2 items-center gap-2 hover:bg-background hover:text-primary rounded p-2"
+                    } `}
+                    href={child.href}
+                  >
+                    <span className="w-6">{child.icon}</span>
+                    {showChild && <span>{child.label}</span>}
+                  </Link>
+                ) : (
+                  <div className="flex my-2 items-center gap-2 rounded p-2">
+                    <span className="w-6">{child.icon}</span>
+                    {showChild && <span>{child.label}</span>}
+                  </div>
+                )}
               </li>
             ))}
           </ul>
