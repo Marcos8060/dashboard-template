@@ -12,7 +12,9 @@ const Sidebar = ({ collapsed, setCollapsed }) => {
         {!collapsed && <div className="px-8">Logo</div>}
         <button
           onClick={() => setCollapsed(!collapsed)}
-          className={`${collapsed ? 'mx-auto' : 'mr-2'} hover:bg-primary hover:text-white p-2 rounded flex place-items-center justify-center`}
+          className={`${
+            collapsed ? "mx-auto" : "mr-2"
+          } hover:bg-primary hover:text-white p-2 rounded flex place-items-center justify-center`}
         >
           {collapsed ? (
             <BsChevronDoubleRight className="text-xl" />
@@ -21,9 +23,11 @@ const Sidebar = ({ collapsed, setCollapsed }) => {
           )}
         </button>
       </header>
-      <section className="my-4 px-4">
+      <section
+        className="my-4 px-4 h-[90vh]"
+      >
         <div>
-          <ul className="space-y-4 my-4">
+          <ul className={`space-y-4 my-4`}>
             {menus.map((menu, index) => (
               <MenuChild key={index} {...{ index, menu, collapsed }} />
             ))}

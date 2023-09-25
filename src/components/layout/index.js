@@ -1,7 +1,6 @@
-import React, { useState, ReactNode } from "react";
+import React, { useState, ReactNode, useRef } from "react";
 import Header from "../header";
 import Sidebar from "../sidebar";
-
 
 const Layout = ({ children }) => {
   const [collapsed, setCollapsed] = useState(false);
@@ -9,7 +8,9 @@ const Layout = ({ children }) => {
   return (
     <div className="flex h-screen overflow-hidden">
       <div
-        className={`${collapsed ? "w-16" : "w-64"} h-screen md:block hidden`}
+        className={`${
+          collapsed ? "w-16" : "w-64"
+        } h-screen md:block hidden`}
       >
         <Sidebar
           collapsed={collapsed}
