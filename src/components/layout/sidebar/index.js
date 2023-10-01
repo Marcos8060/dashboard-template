@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { MdLogout } from "react-icons/md";
-import { BsFillExclamationCircleFill } from "react-icons/bs";
-import { IoMdSettings } from "react-icons/io";
 import { menus } from "@/assets/menu";
 import MenuChild from "./menu-children";
 
