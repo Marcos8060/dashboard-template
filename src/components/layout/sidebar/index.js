@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { AiFillLock, AiOutlineQuestionCircle } from "react-icons/ai";
+import { MdLogout } from "react-icons/md";
 import { BsFillExclamationCircleFill } from "react-icons/bs";
 import { IoMdSettings } from "react-icons/io";
 import { menus } from "@/assets/menu";
@@ -15,29 +15,17 @@ const Sidebar = () => {
           <h1>Logo</h1>
         </header>
         <section className="p-4 h-[90vh] flex flex-col justify-between">
-          <div className="h-3/14 overflow-x-auto">
+          <div className="h-3/4 overflow-x-auto">
             <ul className="space-y-4 my-4 ">
               {menus.map((menu, index) => (
                 <MenuChild key={index} {...{ index, menu, collapsed }} />
               ))}
             </ul>
           </div>
-          <div style={{ fontSize: "10px" }} className="space-y-4 mb-4">
-            <div className="flex items-center gap-2">
-              <AiFillLock className="text-xl" />
+          <div className="">
+            <div className="flex items-center justify-center gap-2 bg-cardSecondary text-white rounded p-2 text-sm">
+              <MdLogout className="text-xl" />
               <p>Logout</p>
-            </div>
-            <div className="flex items-center gap-2">
-              <IoMdSettings className="text-xl" />
-              <p>Settings</p>
-            </div>
-            <div className="flex items-center gap-2">
-              <AiOutlineQuestionCircle className="text-xl" />
-              <p>Support</p>
-            </div>
-            <div className="flex items-center gap-2">
-              <BsFillExclamationCircleFill className="text-xl" />
-              <p>Make - Easy HMIS v1.0</p>
             </div>
           </div>
         </section>

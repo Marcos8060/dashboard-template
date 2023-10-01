@@ -10,6 +10,8 @@ module.exports = {
       primary: '#1E2640',
       white: '#ffffff',
       background: '#F2F2F6',
+      card: '#146EB4',
+      cardSecondary: '#0E4F82'
     }
   },
   plugins: [],
