@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from '@/components/layout'
+import DashboardLayout from '@/components/layout'
 
 const ApprovedUsers = () => {
   return (
@@ -8,7 +8,7 @@ const ApprovedUsers = () => {
 }
 
 ApprovedUsers.getLayout = (page) => (
-    <Layout>{page}</Layout>
+    <DashboardLayout>{page}</DashboardLayout>
 )
 
 export default ApprovedUsers

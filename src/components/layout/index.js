@@ -1,16 +1,16 @@
 import React, { useState, ReactNode, useRef } from "react";
-import Header from "../header";
-import Sidebar from "../sidebar";
+import Header from "./header";
+import Sidebar from "./sidebar";
 
-const Layout = ({ children }) => {
+const DashboardLayout = ({ children }) => {
   const [collapsed, setCollapsed] = useState(false);
 
   return (
-    <div className="flex h-screen overflow-hidden">
+    <div className="flex h-screen overflow-hidden bg-background">
       <div
         className={`${
           collapsed ? "w-16" : "w-64"
-        } h-screen md:block hidden`}
+        } h-screen md:block hidden bg-white`}
       >
         <Sidebar
           collapsed={collapsed}
@@ -20,10 +20,10 @@ const Layout = ({ children }) => {
 
       <div className="flex-1 overflow-y-auto">
         <Header collapsed={collapsed} />
-        <div className="bg-background p-4">{children}</div>
+        <div className=" p-4">{children}</div>
       </div>
     </div>
   );
 };
 
-export default Layout;
+export default DashboardLayout;

@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from '@/components/layout'
+import DashboardLayout from '@/components/layout'
 
 const Users = () => {
   return (
@@ -8,7 +8,7 @@ const Users = () => {
 }
 
 Users.getLayout = (page) =>(
-    <Layout>{page}</Layout>
+    <DashboardLayout>{page}</DashboardLayout>
 )
 
 export default Users
